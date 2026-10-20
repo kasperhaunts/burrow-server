@@ -1,0 +1,18 @@
+applications:
+  app:
+    type: nodejs:26
+    build:
+      flavor: none
+    hooks:
+      build: |
+        set -ex
+        npm install
+    web:
+      commands:
+        start: node server.js
+      locations:
+        /:
+          root: public
+          index: [index.html]
+          expires: 1h
+          scripts: false
