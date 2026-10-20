@@ -89,3 +89,4 @@ main().catch(err => {
   process.exit(1);
 });
 grep -rn "listen(\|127.0.0.1\|8080" server.js lib config.js
+process.env.PORT 
