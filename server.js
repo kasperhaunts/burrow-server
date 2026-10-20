@@ -23,7 +23,6 @@ const support = require("./lib/support.js");
 const sfs = require("./lib/sfs.js");
 const stats = require("./lib/stats.js");
 const world = require("./lib/world.js");
-const port = process.env.PORT || 3000; app.listen(port))
 
 // files this server makes are its own to read: accounts, logs, the cache.
 process.umask(0o077);
@@ -88,5 +87,9 @@ main().catch(err => {
   console.error(`[server] failed to start: ${err.message}`);
   process.exit(1);
 });
-grep -rn "listen(\|127.0.0.1\|8080" server.js lib config.js
-process.env.PORT 
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Server is successfully running on port ${port}`);
+});
