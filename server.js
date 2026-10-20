@@ -23,7 +23,7 @@ const support = require("./lib/support.js");
 const sfs = require("./lib/sfs.js");
 const stats = require("./lib/stats.js");
 const world = require("./lib/world.js");
-
+app.listen(port)
 // files this server makes are its own to read: accounts, logs, the cache.
 process.umask(0o077);
 
